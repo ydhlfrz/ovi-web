@@ -150,34 +150,59 @@ h1, h2, h3, h4, .font-serif {
   }
 }
 
-/* Penyesuaian Tampilan Responsif Layar HP (Mobile) */
+/* Gaya Hero Section untuk Desktop/Laptop (Default) */
+.hero-section {
+  position: relative;
+  min-height: 85vh;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  /* Atur gradient transparan lembut di kiri dan gambar wajah model di kanan */
+  background: linear-gradient(
+    to right, 
+    rgba(250, 242, 245, 0.96) 0%, 
+    rgba(250, 242, 245, 0.85) 45%, 
+    rgba(250, 242, 245, 0.2) 100%
+  ), url('/images/hero-bg.jpg') center right / cover no-repeat;
+}
+
+.hero-title {
+  font-size: calc(2.2rem + 1.8vw); /* Membuat ukuran judul fleksibel */
+}
+
+/* Penyesuaian Khusus Layar HP / Mobile */
 @media (max-width: 991.98px) {
   .hero-section {
-    /* Overlay gradient dibuat sangat tipis (0.4 ke 0.75) dari atas ke bawah */
+    min-height: 85vh !important;
+    padding-top: 4rem !important;
+    padding-bottom: 3rem !important;
+    /* PENTING: Gradient diubah vertikal dari atas (transparan) ke bawah (solid pink) 
+       agar wajah model di kanan atas tetap terlihat jelas di layar HP */
     background: linear-gradient(
       to bottom, 
-      rgba(250, 244, 246, 0.35) 0%, 
-      rgba(250, 244, 246, 0.75) 50%,
-      rgba(250, 244, 246, 0.95) 100%
-    ), url('/images/hero-bg.jpg') center top / cover no-repeat !important;
-    min-height: 85vh !important;
-    padding-top: 2rem !important;
-    padding-bottom: 3rem !important;
+      rgba(250, 242, 245, 0.15) 0%, 
+      rgba(250, 242, 245, 0.75) 55%,
+      rgba(250, 242, 245, 0.98) 95%
+    ), url('/images/hero-bg.jpg') center right 30% / cover no-repeat !important; /* Geser gambar agar wajah model terlihat di tengah-kanan */
     display: flex !important;
-    align-items: flex-end !important; /* Mendorong teks ke bawah agar wajah/kuku model di atas terlihat */
+    align-items: flex-end !important; /* Dorong seluruh teks agar berada di bawah area wajah model */
   }
 
   .hero-title {
-    font-size: 2.2rem !important;
-    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+    font-size: 2.3rem !important;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7); /* Memberikan bayangan halus agar teks sangat mudah dibaca */
+  }
+  
+  .hero-section p.fs-5 {
+    font-size: 1.1rem !important;
   }
 
-  /* Hamburger Menu Pop-up */
+  /* Dropdown Hamburger Menu di HP */
   .navbar-collapse {
     background-color: var(--bg-primary);
     padding: 1.2rem;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    margin-top: 10px;
   }
   
   .nav-link {
