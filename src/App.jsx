@@ -21,59 +21,76 @@ function App() {
             <img src="/images/logo.png" onError={(e) => e.target.src="https://via.placeholder.com/150x60?text=OVI+LOGO"} alt="OVI Logo" style={{ height: '120px', objectFit: 'contain' }} />
           </a>
 
-          <div className="d-flex align-items-center gap-3 ms-auto ms-lg-0 order-lg-last">
-            <div className="bg-white px-3 py-2 rounded-pill shadow-sm fw-bold fs-6">
-              <span className={`px-3 py-1.5 rounded ${lang === 'en' ? 'bg-danger text-white' : 'text-muted'}`} onClick={() => setLang('en')} style={{ cursor: 'pointer' }}>EN</span>
-              <span className="text-muted mx-1">|</span>
-              <span className={`px-3 py-1.5 rounded ${lang === 'id' ? 'bg-danger text-white' : 'text-muted'}`} onClick={() => setLang('id')} style={{ cursor: 'pointer' }}>ID</span>
+          {/* KONTROL MOBILE */}
+          <div className="d-flex align-items-center gap-2 ms-auto order-lg-last me-2 me-lg-0">
+            <div className="bg-white px-2 py-1 rounded-pill shadow-sm small fw-bold">
+              <span className={`px-2 py-1 rounded ${lang === 'en' ? 'bg-danger text-white' : 'text-muted'}`} onClick={() => setLang('en')} style={{ cursor: 'pointer' }}>EN</span>
+              <span className="text-muted">|</span>
+              <span className={`px-2 py-1 rounded ${lang === 'id' ? 'bg-danger text-white' : 'text-muted'}`} onClick={() => setLang('id')} style={{ cursor: 'pointer' }}>ID</span>
             </div>
             <a href="https://wa.me/6285238652587" target="_blank" rel="noreferrer" className="btn btn-custom btn-sm d-none d-lg-inline-block">
               <i className="bi bi-whatsapp me-1"></i> {t.btn_book_wa}
             </a>
           </div>
 
-          <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul className="navbar-nav">
-              <li className="nav-item"><a className="nav-link" href="#home">{t.nav_home}</a></li>
-              <li className="nav-item"><a className="nav-link" href="#about">{t.nav_about}</a></li>
-              <li className="nav-item"><a className="nav-link" href="#services">{t.nav_services}</a></li>
-              <li className="nav-item"><a className="nav-link" href="#gallery">{t.nav_gallery}</a></li>
-              <li className="nav-item"><a className="nav-link" href="#contact">{t.nav_contact}</a></li>
+          {/* HAMBURGER MENU */}
+          <button 
+            className="navbar-toggler border-0 p-2 shadow-none" 
+            type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#navbarNav" 
+            aria-controls="navbarNav" 
+            aria-expanded="false" 
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+
+          {/* NAVIGASI (COLLAPSE) */}
+          <div className="collapse navbar-collapse justify-content-center text-center mt-3 mt-lg-0" id="navbarNav">
+            <ul className="navbar-nav py-2 py-lg-0">
+              <li className="nav-item"><a className="nav-link py-2" href="#home">{t.nav_home}</a></li>
+              <li className="nav-item"><a className="nav-link py-2" href="#about">{t.nav_about}</a></li>
+              <li className="nav-item"><a className="nav-link py-2" href="#services">{t.nav_services}</a></li>
+              <li className="nav-item"><a className="nav-link py-2" href="#gallery">{t.nav_gallery}</a></li>
+              <li className="nav-item"><a className="nav-link py-2" href="#contact">{t.nav_contact}</a></li>
             </ul>
+            
+            {/* Tombol WhatsApp */}
+            <div className="d-lg-none mt-2 pb-3">
+              <a href="https://wa.me/6285238652587" target="_blank" rel="noreferrer" className="btn btn-custom w-100 py-2">
+                <i className="bi bi-whatsapp me-2"></i> {t.btn_book_wa}
+              </a>
+            </div>
           </div>
         </div>
       </nav>
 
-      {/* HERO SECTION WITH BACKGROUND */}
-      <section id="home" className="position-relative py-5 d-flex align-items-center" style={{
+      {/* HERO SECTION */}
+      <section id="home" className="position-relative py-5 d-flex align-items-center hero-section" style={{
         minHeight: '85vh',
-        background: `linear-gradient(to right, rgba(250, 244, 246, 0.95) 0%, rgba(250, 244, 246, 0.8) 50%, rgba(250, 244, 246, 0.3) 100%), url('/images/hero-bg.png') center/cover no-repeat`
+        background: `linear-gradient(to right, rgba(250, 244, 246, 0.95) 0%, rgba(250, 244, 246, 0.85) 50%, rgba(250, 244, 246, 0.4) 100%), url('/images/hero-bg.png') center right/cover no-repeat`
       }}>
-        <div className="container py-5">
+        <div className="container py-4 py-md-5">
           <div className="row">
-            <div className="col-lg-7 col-md-9">
-              {/* Subtitle diperbesar dari small menjadi fs-5 */}
-              <p className="text-uppercase fs-5 fw-medium tracking-widest text-muted mb-3" style={{ letterSpacing: '3px' }}>
+            <div className="col-lg-7 col-md-9 col-12">
+              <p className="text-uppercase fs-6 fw-medium tracking-widest text-muted mb-2" style={{ letterSpacing: '2px' }}>
                 {t.hero_subtitle}
               </p>
 
-              {/* Judul utama diperbesar dari display-2 ke display-1 */}
-              <h1 className="display-1 font-serif fw-normal mb-3" style={{ lineHeight: '1.05', fontSize: 'calc(2.5rem + 3.5vw)' }}>
+              <h1 className="display-3 font-serif fw-normal mb-3 hero-title" style={{ lineHeight: '1.1' }}>
                 {t.hero_title}
               </h1>
 
-              {/* Deskripsi diperbesar dari fs-5 ke fs-4 */}
-              <p className="fs-4 text-muted mb-4 leading-relaxed">
+              <p className="fs-5 text-muted mb-4 leading-relaxed">
                 {t.hero_desc}
               </p>
 
-              {/* Tombol WhatsApp diperbesar font dan padding-nya */}
-              <a href="https://wa.me/6285238652587" target="_blank" rel="noreferrer" className="btn-custom fs-5 py-3 px-5 shadow me-3">
+              <a href="https://wa.me/6285238652587" target="_blank" rel="noreferrer" className="btn-custom fs-5 py-3 px-4 px-md-5 shadow me-3 d-inline-block">
                 <i className="bi bi-whatsapp me-2"></i> {t.btn_book_wa} &rarr;
               </a>
 
-              {/* Teks Lokasi diperbesar dari small ke fs-6 */}
-              <p className="fs-6 text-muted mt-4 pt-2">
+              <p className="fs-6 text-muted mt-4 pt-2 mb-0">
                 <i className="bi bi-geo-alt-fill me-1 text-danger"></i> {t.hero_location}
               </p>
             </div>
