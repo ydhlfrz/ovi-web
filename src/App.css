@@ -152,24 +152,24 @@ h1, h2, h3, h4, .font-serif {
 
 /* Responsif Layar HP (Mobile) */
 @media (max-width: 991.98px) {
-  /* Pengaturan latar belakang Hero di HP */
   .hero-section {
+    /* Gradient transparan dibuat lebih tipis dari kiri ke kanan agar gambar di sebelah kanan tetap terlihat */
     background: linear-gradient(
-      to bottom, 
-      rgba(250, 244, 246, 0.92) 0%, 
-      rgba(250, 244, 246, 0.8) 60%, 
-      rgba(250, 244, 246, 0.4) 100%
-    ), url('/images/hero-bg.jpg') center top/cover no-repeat !important;
-    min-height: 75vh !important;
-    padding-top: 2rem !important;
+      to right, 
+      rgba(250, 244, 246, 0.95) 0%, 
+      rgba(250, 244, 246, 0.7) 50%, 
+      rgba(250, 244, 246, 0.25) 100%
+    ), url('/images/hero-bg.jpg') center right/cover no-repeat !important;
+    min-height: 80vh !important;
+    padding-top: 3rem !important;
     padding-bottom: 3rem !important;
   }
 
   .hero-title {
-    font-size: 2.5rem !important;
+    font-size: 2.3rem !important;
   }
 
-  /* Padding menu drop-down hamburger */
+  /* Dropdown Hamburger Menu di HP */
   .navbar-collapse {
     background-color: var(--bg-primary);
     padding: 1rem;
