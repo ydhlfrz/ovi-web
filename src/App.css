@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
 
 :root {
-  --bg-primary: #FAF2F5;     /* Soft Blush Pink (Latar belakang utama website agar tetap bersih & terang) */
-  --bg-secondary: #F3E2E9;   /* Soft Watercolor Pink (Latar belakang section sekunder, terinspirasi dari efek cloud splash) */
-  --accent-color: #B23B68;   /* OVI Signature Magenta Berry (Diambil persis dari warna latar belakang logo utama) */
-  --text-dark: #381020;      /* Deep Plum / Dark Wine (Untuk teks judul agar kontras dan sangat jelas terbaca) */
+  --bg-primary: #FAF2F5;     /* Soft Blush Pink */
+  --bg-secondary: #F3E2E9;   /* Soft Watercolor Pink */
+  --accent-color: #B23B68;   /* OVI Signature Magenta Berry */
+  --text-dark: #381020;      /* Deep Plum / Dark Wine */
   --text-muted: #803D5B;
 }
 
@@ -18,6 +18,15 @@ h1, h2, h3, h4, .font-serif {
   font-family: 'Cormorant Garamond', serif;
 }
 
+/* NAVBAR GLASSMORPHISM EFEK */
+.navbar-glassmorphism {
+  background: rgba(250, 242, 245, 0.75) !important;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
 .btn-custom {
   background-color: var(--accent-color);
   color: #ffffff;
@@ -25,7 +34,9 @@ h1, h2, h3, h4, .font-serif {
   padding: 10px 24px;
   transition: all 0.3s ease;
   text-decoration: none;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: none;
 }
 
@@ -78,7 +89,7 @@ h1, h2, h3, h4, .font-serif {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(61, 34, 43, 0.45);
+  background: rgba(56, 16, 32, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -110,11 +121,11 @@ h1, h2, h3, h4, .font-serif {
   transform: translateY(-3px);
 }
 
-/* Gallery Item Hover Effect */
+/* Gallery & Instagram Item Hover Effect */
 .gallery-item {
   position: relative;
   overflow: hidden;
-  border-radius: 4px;
+  border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -126,54 +137,58 @@ h1, h2, h3, h4, .font-serif {
   transition: transform 0.4s ease;
 }
 
-/* Efek Zoom-In Gambar saat Hover */
 .gallery-item:hover img {
   transform: scale(1.08);
 }
 
-/* Efek Bayangan & Sedikit Terangkat saat Hover */
 .gallery-item:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
   transform: translateY(-4px);
 }
 
-/* Melebarkan batas container Bootstrap di layar besar/desktop */
+/* SKELETON SHIMMER ANIMATION */
+.skeleton {
+  background: linear-gradient(90deg, #f0e6ea 25%, #f9f2f5 50%, #f0e6ea 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+  border-radius: 12px;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Melebarkan batas container Bootstrap */
 @media (min-width: 1200px) {
   .container {
-    max-width: 70% !important; /* Menggunakan 90% dari lebar layar monitor */
+    max-width: 70% !important;
   }
 }
 
 @media (min-width: 1400px) {
   .container {
-    max-width: 65% !important; /* Membuat tata letak proporsional di layar sangat lebar */
+    max-width: 65% !important;
   }
 }
 
-/* Gaya Hero Section untuk Desktop/Laptop (Default) */
 .hero-section {
   position: relative;
   min-height: 85vh;
   padding-top: 3rem;
   padding-bottom: 3rem;
-  /* Atur gradient transparan lembut di kiri dan gambar wajah model di kanan */
   background: linear-gradient(
     to right, 
     rgba(250, 242, 245, 0.96) 0%, 
     rgba(250, 242, 245, 0.85) 45%, 
     rgba(250, 242, 245, 0.2) 100%
-  ), url('/images/hero-bg.jpg') center right / cover no-repeat;
+  ), url('/images/hero-bg.png') center right / cover no-repeat;
 }
 
 .hero-title {
-  font-size: calc(2.2rem + 1.8vw); /* Membuat ukuran judul fleksibel */
+  font-size: calc(2.2rem + 1.8vw);
 }
 
-/* ===================================================
-   EFEK HOVER & ANIMASI UNTUK SERVICES & GALLERY
-   =================================================== */
-
-/* 1. Card Hover Effect (Services) */
 .card-hover-effect {
   transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
   overflow: hidden;
@@ -182,47 +197,10 @@ h1, h2, h3, h4, .font-serif {
 }
 
 .card-hover-effect:hover {
-  transform: translateY(-8px); /* Card terangkat halus saat kursor menempel */
-  box-shadow: 0 15px 30px rgba(178, 59, 104, 0.18) !important; /* Menggunakan tint warna accent */
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(178, 59, 104, 0.18) !important;
 }
 
-/* Efek Zoom Gambar Services saat Card di-hover */
-.card-hover-effect .service-card-img-wrapper img,
-.card-hover-effect .card-img-top {
-  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.card-hover-effect:hover .service-card-img-wrapper img,
-.card-hover-effect:hover .card-img-top {
-  transform: scale(1.08); /* Gambar membesar halus di dalam box */
-}
-
-/* Overlay Tombol 'See Details' pada Services Card */
-.service-card-img-wrapper {
-  position: relative;
-  overflow: hidden;
-}
-
-.service-card-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(56, 16, 32, 0.35); /* Soft berry dark overlay */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.card-hover-effect:hover .service-card-overlay {
-  opacity: 1; /* Munculkan tombol saat di-hover */
-}
-
-
-/* 2. Gallery Hover Effect */
 .gallery-item-effect {
   transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
   overflow: hidden;
@@ -234,28 +212,6 @@ h1, h2, h3, h4, .font-serif {
   transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.gallery-item-effect:hover {
-  transform: translateY(-6px); /* Terangkat sedikit di galeri */
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15) !important;
-}
-
 .gallery-item-effect:hover img {
-  transform: scale(1.08); /* Zoom gambar galeri */
-}
-
-
-/* 3. Animasi Entry Fade-In saat Halaman Dimuat */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in {
-  animation: fadeInUp 0.8s ease-out forwards;
+  transform: scale(1.08);
 }

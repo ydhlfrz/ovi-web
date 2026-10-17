@@ -3,6 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './App.css';
 
+// ANIMASI & IKON MODERN
+import { motion } from 'framer-motion';
+import { Sparkles, ShieldCheck, Heart, Feather, MapPin, Phone, MessageCircle } from 'lucide-react';
+
 // IMPORT LIBRARY AOS & CSS-NYA
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -14,10 +18,10 @@ function App() {
   const [selectedService, setSelectedService] = useState(null);
   const [showGalleryModal, setShowGalleryModal] = useState(false);
   const [previewImage, setPreviewImage] = useState(null);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
   const t = translations[lang];
 
-  // INISIALISASI AOS SAAT KOMPONEN PERTAMA KALI DIMUAT
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -25,12 +29,19 @@ function App() {
       easing: 'ease-out-cubic',
       offset: 100,
     });
+
+    // Simulasi loading gambar untuk Skeleton Screen
+    const timer = setTimeout(() => {
+      setImagesLoaded(true);
+    }, 1200);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
     <div>
-      {/* NAVBAR */}
-      <nav className="navbar navbar-expand-lg py-2 sticky-top" style={{ backgroundColor: 'var(--bg-primary)' }}>
+      {/* NAVBAR GLASSMORPHISM */}
+      <nav className="navbar navbar-expand-lg py-2 sticky-top navbar-glassmorphism">
         <div className="container">
           <a className="navbar-brand text-center py-0" href="#home">
             <img src="/images/logo.png" onError={(e) => e.target.src="https://via.placeholder.com/150x60?text=OVI+LOGO"} alt="OVI Logo" style={{ height: '120px', objectFit: 'contain' }} />
@@ -43,8 +54,8 @@ function App() {
               <span className="text-muted">|</span>
               <span className={`px-2 py-1 rounded ${lang === 'id' ? 'bg-danger text-white' : 'text-muted'}`} onClick={() => setLang('id')} style={{ cursor: 'pointer' }}>ID</span>
             </div>
-            <a href="https://wa.me/6285238652587" target="_blank" rel="noreferrer" className="btn btn-custom btn-sm d-none d-lg-inline-block">
-              <i className="bi bi-whatsapp me-1"></i> {t.btn_book_wa}
+            <a href="https://wa.me/6285238652587?text=Halo%20OVI%20Salon,%20saya%20ingin%20reservasi" target="_blank" rel="noreferrer" className="btn btn-custom btn-sm d-none d-lg-inline-flex gap-1">
+              <MessageCircle size={16} /> {t.btn_book_wa}
             </a>
           </div>
 
@@ -73,8 +84,8 @@ function App() {
             
             {/* Tombol WhatsApp */}
             <div className="d-lg-none mt-2 pb-3">
-              <a href="https://wa.me/6285238652587" target="_blank" rel="noreferrer" className="btn btn-custom w-100 py-2">
-                <i className="bi bi-whatsapp me-2"></i> {t.btn_book_wa}
+              <a href="https://wa.me/6285238652587?text=Halo%20OVI%20Salon,%20saya%20ingin%20reservasi" target="_blank" rel="noreferrer" className="btn btn-custom w-100 py-2 gap-2">
+                <MessageCircle size={18} /> {t.btn_book_wa}
               </a>
             </div>
           </div>
@@ -82,10 +93,7 @@ function App() {
       </nav>
 
       {/* HERO SECTION */}
-      <section id="home" className="position-relative py-5 d-flex align-items-center hero-section" style={{
-        minHeight: '85vh',
-        background: `linear-gradient(to right, rgba(250, 244, 246, 0.95) 0%, rgba(250, 244, 246, 0.85) 50%, rgba(250, 244, 246, 0.4) 100%), url('/images/hero-bg.png') center right/cover no-repeat`
-      }}>
+      <section id="home" className="position-relative py-5 d-flex align-items-center hero-section">
         <div className="container py-4 py-md-5">
           <div className="row">
             <div className="col-lg-7 col-md-9 col-12" data-aos="fade-up">
@@ -101,12 +109,19 @@ function App() {
                 {t.hero_desc}
               </p>
 
-              <a href="https://wa.me/6285238652587" target="_blank" rel="noreferrer" className="btn-custom fs-5 py-3 px-4 px-md-5 shadow me-3 d-inline-block">
-                <i className="bi bi-whatsapp me-2"></i> {t.btn_book_wa} &rarr;
-              </a>
+              <motion.a 
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                href="https://wa.me/6285238652587?text=Halo%20OVI%20Salon,%20saya%20ingin%20reservasi" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="btn-custom fs-5 py-3 px-4 px-md-5 shadow me-3 d-inline-flex align-items-center gap-2"
+              >
+                <MessageCircle size={20} /> {t.btn_book_wa} &rarr;
+              </motion.a>
 
-              <p className="fs-6 text-muted mt-4 pt-2 mb-0">
-                <i className="bi bi-geo-alt-fill me-1 text-danger"></i> {t.hero_location}
+              <p className="fs-6 text-muted mt-4 pt-2 mb-0 d-flex align-items-center gap-1">
+                <MapPin size={18} className="text-danger" /> {t.hero_location}
               </p>
             </div>
           </div>
@@ -133,24 +148,24 @@ function App() {
         </div>
       </section>
 
-      {/* 4 HIGHLIGHT ICONS */}
+      {/* 4 HIGHLIGHT ICONS (LUCIDE ICONS) */}
       <section className="py-4" style={{ backgroundColor: 'var(--bg-primary)' }}>
         <div className="container">
           <div className="row text-center g-4 justify-content-center">
             <div className="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
-              <i className="bi bi-stars fs-1" style={{ color: 'var(--accent-color)' }}></i>
+              <Sparkles size={36} color="var(--accent-color)" className="mx-auto" />
               <h6 className="fw-bold mt-2 mb-0">Premium Quality Products</h6>
             </div>
             <div className="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
-              <i className="bi bi-shield-check fs-1" style={{ color: 'var(--accent-color)' }}></i>
+              <ShieldCheck size={36} color="var(--accent-color)" className="mx-auto" />
               <h6 className="fw-bold mt-2 mb-0">Clean & Hygienic Studio</h6>
             </div>
             <div className="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
-              <i className="bi bi-heart fs-1" style={{ color: 'var(--accent-color)' }}></i>
+              <Heart size={36} color="var(--accent-color)" className="mx-auto" />
               <h6 className="fw-bold mt-2 mb-0">Personalized Care</h6>
             </div>
             <div className="col-6 col-md-3" data-aos="fade-up" data-aos-delay="400">
-              <i className="bi bi-feather fs-1" style={{ color: 'var(--accent-color)' }}></i>
+              <Feather size={36} color="var(--accent-color)" className="mx-auto" />
               <h6 className="fw-bold mt-2 mb-0">A Welcoming Experience</h6>
             </div>
           </div>
@@ -189,7 +204,7 @@ function App() {
         </div>
       </section>
 
-      {/* SERVICES CARDS SECTION */}
+      {/* SERVICES CARDS SECTION (DENGAN FRAMER MOTION & SKELETON) */}
       <section id="services" className="py-5 my-3" style={{ backgroundColor: 'var(--bg-primary)' }}>
         <div className="container">
           <div className="text-center mb-5" data-aos="fade-up">
@@ -201,20 +216,31 @@ function App() {
           <div className="row g-4 justify-content-center">
             {servicesData.map((item, index) => (
               <div className="col-md-4" key={item.id} data-aos="fade-up" data-aos-delay={index * 150}>
-                <div className="card service-card card-hover-effect shadow-sm h-100 border-0" onClick={() => setSelectedService(item)}>
-                  <div className="service-card-img-wrapper overflow-hidden">
-                    <img src={item.image} onError={(e) => e.target.src = item.fallbackImage} alt={item.category} />
-                    <div className="service-card-overlay">
-                      <span className="btn btn-light rounded-pill px-4 py-2 fw-bold text-uppercase shadow-sm" style={{ letterSpacing: '1px' }}>
-                        {t.see_details} &rarr;
-                      </span>
+                {!imagesLoaded ? (
+                  /* Skeleton Card */
+                  <div className="skeleton shadow-sm h-100" style={{ height: '380px' }}></div>
+                ) : (
+                  <motion.div 
+                    whileHover={{ scale: 1.02, y: -6 }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ duration: 0.3 }}
+                    className="card service-card card-hover-effect shadow-sm h-100 border-0" 
+                    onClick={() => setSelectedService(item)}
+                  >
+                    <div className="service-card-img-wrapper overflow-hidden">
+                      <img src={item.image} onError={(e) => e.target.src = item.fallbackImage} alt={item.category} />
+                      <div className="service-card-overlay">
+                        <span className="btn btn-light rounded-pill px-4 py-2 fw-bold text-uppercase shadow-sm" style={{ letterSpacing: '1px' }}>
+                          {t.see_details} &rarr;
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                  <div className="card-body text-center py-4">
-                    <h3 className="font-serif fs-3 mb-1">{item.category}</h3>
-                    <p className="small text-muted mb-0">{item.subtitle}</p>
-                  </div>
-                </div>
+                    <div className="card-body text-center py-4">
+                      <h3 className="font-serif fs-3 mb-1">{item.category}</h3>
+                      <p className="small text-muted mb-0">{item.subtitle}</p>
+                    </div>
+                  </motion.div>
+                )}
               </div>
             ))}
           </div>
@@ -237,17 +263,57 @@ function App() {
           <div className="row g-3">
             {galleryImages.slice(0, 8).map((img, index) => (
               <div className="col-6 col-md-3" key={img.id} data-aos="fade-up" data-aos-delay={(index % 4) * 100}>
-                <div className="gallery-item gallery-item-effect shadow-sm rounded-4 overflow-hidden" onClick={() => setPreviewImage(img)} style={{ cursor: 'pointer' }}>
-                  <img src={img.src} className="img-fluid w-100" alt={img.title} />
-                </div>
+                {!imagesLoaded ? (
+                  <div className="skeleton rounded-4" style={{ height: '220px' }}></div>
+                ) : (
+                  <motion.div 
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
+                    className="gallery-item gallery-item-effect shadow-sm rounded-4 overflow-hidden" 
+                    onClick={() => setPreviewImage(img)} 
+                    style={{ cursor: 'pointer' }}
+                  >
+                    <img src={img.src} className="img-fluid w-100" alt={img.title} />
+                  </motion.div>
+                )}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* SECTION RATING & REVIEWS GOOGLE */}
+      {/* INSTAGRAM FEED WIDGET SECTION
       <section className="py-5" style={{ backgroundColor: 'var(--bg-primary)' }}>
+        <div className="container text-center" data-aos="fade-up">
+          <div className="d-flex align-items-center justify-content-center gap-2 mb-2">
+            <i className="bi bi-instagram fs-4" style={{ color: '#E1306C' }}></i>
+            <span className="text-uppercase small tracking-widest text-muted" style={{ letterSpacing: '2px' }}>
+              FOLLOW OUR INSTAGRAM
+            </span>
+          </div>
+          <h2 className="display-6 font-serif mb-4">@ovi.eyelash</h2>
+
+          <div className="row g-2 g-md-3">
+            {galleryImages.slice(0, 6).map((img, idx) => (
+              <div className="col-4 col-md-2" key={idx}>
+                <motion.a 
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  href="https://instagram.com/ovi.eyelash" 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="d-block overflow-hidden rounded-3 shadow-sm gallery-item-effect"
+                >
+                  <img src={img.src} className="img-fluid w-100" alt="Instagram Post" style={{ aspectRatio: '1/1', objectFit: 'cover' }} />
+                </motion.a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section> */}
+
+      {/* SECTION RATING & REVIEWS GOOGLE */}
+      <section className="py-5" style={{ backgroundColor: 'var(--bg-secondary)' }}>
         <div className="container text-center">
           <div data-aos="fade-up">
             <span className="text-uppercase small tracking-widest text-muted" style={{ letterSpacing: '2px' }}>{t.review_sub}</span>
@@ -305,7 +371,7 @@ function App() {
       </section>
 
       {/* CONTACT & INTERACTIVE GOOGLE MAPS SECTION */}
-      <section id="contact" className="py-5" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+      <section id="contact" className="py-5" style={{ backgroundColor: 'var(--bg-primary)' }}>
         <div className="container">
           <div className="row align-items-center g-4">
             <div className="col-lg-6" data-aos="fade-right">
@@ -318,7 +384,7 @@ function App() {
                   allowFullScreen="" 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Google Maps OVI Studio">
+                  title="Google Maps OVI Salon">
                 </iframe>
               </div>
             </div>
@@ -329,21 +395,21 @@ function App() {
 
               <div className="row g-4">
                 <div className="col-md-6">
-                  <h6 className="fw-bold mb-2"><i className="bi bi-geo-alt me-1 text-danger"></i> {t.loc_title}</h6>
+                  <h6 className="fw-bold mb-2 d-flex align-items-center gap-1"><MapPin size={18} className="text-danger" /> {t.loc_title}</h6>
                   <p className="small text-muted mb-2">Kuta, Pujut, Kabupaten Lombok Tengah, West Nusa Tenggara</p>
                   <a href="https://maps.app.goo.gl/fCEPpsCo36EUN9ex5?g_st=iwb" target="_blank" rel="noreferrer" className="small text-dark text-decoration-underline fw-bold">{t.get_directions} &rarr;</a>
                 </div>
 
                 <div className="col-md-6">
-                  <h6 className="fw-bold mb-2"><i className="bi bi-phone me-1 text-primary"></i> {t.contact_admin}</h6>
+                  <h6 className="fw-bold mb-2 d-flex align-items-center gap-1"><Phone size={18} className="text-primary" /> {t.contact_admin}</h6>
                   <p className="small text-muted mb-2">+62 852-3865-2587</p>
-                  <a href="https://wa.me/6285238652587?text=Halo%20Admin%20OVI%20Studio,%20saya%20ingin%20bertanya" target="_blank" rel="noreferrer" className="small text-success text-decoration-none fw-bold">
-                    <i className="bi bi-whatsapp me-1"></i> {t.chat_wa} &rarr;
+                  <a href="https://wa.me/6285238652587?text=Halo%20OVI%20Salon,%20saya%20ingin%20reservasi" target="_blank" rel="noreferrer" className="small text-success text-decoration-none fw-bold d-inline-flex align-items-center gap-1">
+                    <MessageCircle size={16} /> {t.chat_wa} &rarr;
                   </a>
                 </div>
 
                 <div className="col-md-12 pt-2">
-                  <h6 className="fw-bold mb-3"><i className="bi bi-share me-1 text-secondary"></i> {t.follow_us}</h6>
+                  <h6 className="fw-bold mb-3">{t.follow_us}</h6>
                   <div className="d-flex align-items-center gap-2">
                     <a href="https://instagram.com/ovi.eyelash" target="_blank" rel="noreferrer" className="social-link" title="Instagram @ovi.eyelash">
                       <i className="bi bi-instagram" style={{ color: '#E1306C' }}></i>
@@ -452,8 +518,8 @@ function App() {
                   </div>
                 )}
 
-                <a href="https://wa.me/6285238652587" target="_blank" rel="noreferrer" className="btn-custom w-100 text-center mt-4 py-2">
-                  <i className="bi bi-whatsapp me-1"></i> {t.book_service_wa}
+                <a href="https://wa.me/6285238652587?text=Halo%20OVI%20Salon,%20saya%20ingin%20reservasi" target="_blank" rel="noreferrer" className="btn-custom w-100 text-center mt-4 py-2 gap-2">
+                  <MessageCircle size={18} /> {t.book_service_wa}
                 </a>
               </div>
               <div className="modal-footer border-0 pt-0">
