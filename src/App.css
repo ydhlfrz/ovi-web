@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
 
 :root {
-  --bg-primary: #FAF4F6;     /* Soft blush pink pastel */
-  --bg-secondary: #F4E8EC;   /* Dusty rose pastel */
-  --accent-color: #B85B7A;   /* Soft Berry Mauve */
-  --text-dark: #3D222B;      /* Deep Plum Pekat */
-  --text-muted: #855C6A;     /* Muted Mauve */
+  --bg-primary: #FAF2F5;     /* Soft Blush Pink (Latar belakang utama website agar tetap bersih & terang) */
+  --bg-secondary: #F3E2E9;   /* Soft Watercolor Pink (Latar belakang section sekunder, terinspirasi dari efek cloud splash) */
+  --accent-color: #B23B68;   /* OVI Signature Magenta Berry (Diambil persis dari warna latar belakang logo utama) */
+  --text-dark: #381020;      /* Deep Plum / Dark Wine (Untuk teks judul agar kontras dan sangat jelas terbaca) */
+  --text-muted: #803D5B;
 }
 
 body {
