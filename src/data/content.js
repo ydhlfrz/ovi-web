@@ -83,7 +83,9 @@ export const galleryImages = [
   { id: 5, src: "/images/gallery-5.png", title: "" },
   { id: 6, src: "/images/gallery-6.png", title: "" },
   { id: 7, src: "/images/gallery-7.png", title: "" },
-  { id: 8, src: "/images/gallery-8.png", title: "" }
+  { id: 8, src: "/images/gallery-8.png", title: "" },
+  { id: 9, src: "/images/gallery-9.png", title: "" },
+  { id: 10, src: "/images/gallery-10.png", title: "" }
 ];
 
 export const translations = {
@@ -99,8 +101,8 @@ export const translations = {
     hero_location: "Kuta, Lombok, Indonesia",
     btn_book_wa: "Book on WhatsApp",
     about_sub: "ABOUT OVI",
-    about_title: "Perfect lashes. Flawless nails. Zero effort.",
-    about_desc: "Crafted by detail-obsessed technicians using top-tier products. Whether you need a subtle boost or a full beach-glam transformation, we guarantee you’ll walk out feeling unmatched. Don’t wait until our slots fill up — Book your appointment now!",
+    about_title: "Beauty You Can Feel Good About.",
+    about_desc: "At Ovi Eyelash & Nail Studio, every detail is designed around your beauty, comfort, and confidence. From our signature Korean Lashlift to beautifully crafted lash extensions and refined nail treatments, our professional team is here to help you look and feel your best. We value cleanliness, careful techniques, and properly sterilized tools to make your beauty experience as comfortable and hygienic as possible. Your time. Your beauty. Your little escape in Kuta Lombok. Ready for your next beauty moment? Book your appointment with Ovi today.",
     why_sub: "WHY CHOOSE US",
     why_title: "Why Choose OVI Eyelash?",
     services_sub: "OUR SERVICES",
@@ -158,8 +160,8 @@ export const translations = {
     hero_location: "Kuta, Lombok, Indonesia",
     btn_book_wa: "Booking via WhatsApp",
     about_sub: "TENTANG OVI",
-    about_title: "Bulu mata sempurna. Kuku rapi. Tanpa ribet.",
-    about_desc: "Dikerjakan oleh teknisi ahli yang sangat teliti dengan produk kelas atas. Baik kamu menginginkan tampilan alami maupun transformasi beach-glam maksimal, kami garansi kamu akan pulang dengan rasa percaya diri penuh. Slot harian terbatas — Pesan perawatanmu sekarang juga!",
+    about_title: "Kecantikan yang Membuat Anda Merasa Nyaman.",
+    about_desc: "Di Ovi Eyelash & Nail Studio, setiap detail dirancang demi kecantikan, kenyamanan, dan kepercayaan diri Anda. Mulai dari layanan unggulan Korean Lashlift, pemasangan ekstensi bulu mata yang dikerjakan dengan apik, hingga perawatan kuku yang elegan, tim profesional kami siap membantu Anda tampil dan merasa dalam kondisi terbaik. Kami sangat mengutamakan kebersihan, teknik yang cermat, serta penggunaan peralatan yang disterilkan dengan benar, agar pengalaman kecantikan Anda terasa nyaman dan higienis. Waktu Anda. Kecantikan Anda. Sebuah pelarian singkat untuk Anda di Kuta, Lombok. Siap untuk momen kecantikan Anda berikutnya? Segera buat janji temu Anda di Ovi hari ini.",
     why_sub: "MENGAPA MEMILIH KAMI",
     why_title: "Mengapa Memilih OVI Eyelash?",
     services_sub: "LAYANAN KAMI",

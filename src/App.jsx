@@ -148,7 +148,7 @@ function App() {
         </div>
       </section>
 
-      {/* 4 HIGHLIGHT ICONS (LUCIDE ICONS) */}
+      {/* 4 HIGHLIGHT ICONS (LUCIDE ICONS)
       <section className="py-4" style={{ backgroundColor: 'var(--bg-primary)' }}>
         <div className="container">
           <div className="row text-center g-4 justify-content-center">
@@ -170,9 +170,9 @@ function App() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* WHY CHOOSE US SECTION */}
+      {/* WHY CHOOSE US SECTION
       <section className="py-5">
         <div className="container">
           <div className="p-4 p-md-5 rounded-4 shadow-sm" style={{ backgroundColor: 'var(--bg-secondary)', borderLeft: '4px solid var(--accent-color)' }} data-aos="fade-up">
@@ -202,7 +202,7 @@ function App() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* SERVICES CARDS SECTION */}
       <section id="services" className="py-5 my-3" style={{ backgroundColor: 'var(--bg-primary)' }}>
