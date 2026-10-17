@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg-primary: #FAF4F6;     /* Soft blush pink pastel */
+  --bg-secondary: #F4E8EC;   /* Dusty rose pastel */
+  --accent-color: #B85B7A;   /* Soft Berry Mauve */
+  --text-dark: #3D222B;      /* Deep Plum Pekat */
+  --text-muted: #855C6A;     /* Muted Mauve */
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-dark);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.btn-custom {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  border-radius: 30px;
+  padding: 10px 24px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+}
+
+.btn-custom:hover {
+  background-color: #9E4965;
+  color: #ffffff;
+}
+
+.nav-link {
+  color: var(--text-dark);
+  font-size: 1.15rem;    
+  font-weight: 500;    
+  margin: 0 14px;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--accent-color);
+}
+
+.service-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+  background-color: var(--bg-secondary);
+}
+
+.service-card-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 380px;
+}
+
+.service-card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-card-img-wrapper img {
+  transform: scale(1.08);
+}
+
+.service-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(61, 34, 43, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.service-card:hover .service-card-overlay {
+  opacity: 1;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: var(--text-dark);
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* Gallery Item Hover Effect */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* Efek Zoom-In Gambar saat Hover */
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+/* Efek Bayangan & Sedikit Terangkat saat Hover */
+.gallery-item:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+  transform: translateY(-4px);
+}
+
+/* Melebarkan batas container Bootstrap di layar besar/desktop */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 70% !important; /* Menggunakan 90% dari lebar layar monitor */
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 65% !important; /* Membuat tata letak proporsional di layar sangat lebar */
+  }
+}
