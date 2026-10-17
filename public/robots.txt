@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ovi-web.vercel.app/sitemap.xml
+Sitemap: https://ovi-web-lake.vercel.app/sitemap.xml
