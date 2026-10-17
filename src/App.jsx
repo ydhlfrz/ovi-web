@@ -66,7 +66,7 @@ function App() {
         </div>
       </nav>
 
-      {/* HERO SECTION */}
+      {/* HERO SECTION DENGAN RESPONSIF GAMBAR HP */}
       <section id="home" className="position-relative py-5 d-flex align-items-center hero-section" style={{
         minHeight: '85vh',
         background: `linear-gradient(to right, rgba(250, 244, 246, 0.95) 0%, rgba(250, 244, 246, 0.85) 50%, rgba(250, 244, 246, 0.4) 100%), url('/images/hero-bg.png') center right/cover no-repeat`

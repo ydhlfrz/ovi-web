@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ovi-web-lake.vercel.app/sitemap.xml
