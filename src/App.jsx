@@ -148,62 +148,6 @@ function App() {
         </div>
       </section>
 
-      {/* 4 HIGHLIGHT ICONS (LUCIDE ICONS)
-      <section className="py-4" style={{ backgroundColor: 'var(--bg-primary)' }}>
-        <div className="container">
-          <div className="row text-center g-4 justify-content-center">
-            <div className="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
-              <Sparkles size={36} color="var(--accent-color)" className="mx-auto" />
-              <h6 className="fw-bold mt-2 mb-0">Premium Quality Products</h6>
-            </div>
-            <div className="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
-              <ShieldCheck size={36} color="var(--accent-color)" className="mx-auto" />
-              <h6 className="fw-bold mt-2 mb-0">Clean & Hygienic Studio</h6>
-            </div>
-            <div className="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
-              <Heart size={36} color="var(--accent-color)" className="mx-auto" />
-              <h6 className="fw-bold mt-2 mb-0">Personalized Care</h6>
-            </div>
-            <div className="col-6 col-md-3" data-aos="fade-up" data-aos-delay="400">
-              <Feather size={36} color="var(--accent-color)" className="mx-auto" />
-              <h6 className="fw-bold mt-2 mb-0">A Welcoming Experience</h6>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-      {/* WHY CHOOSE US SECTION
-      <section className="py-5">
-        <div className="container">
-          <div className="p-4 p-md-5 rounded-4 shadow-sm" style={{ backgroundColor: 'var(--bg-secondary)', borderLeft: '4px solid var(--accent-color)' }} data-aos="fade-up">
-            <div className="row align-items-center g-4">
-              <div className="col-lg-4" data-aos="fade-right">
-                <span className="text-uppercase small tracking-widest text-muted" style={{ letterSpacing: '2px' }}>{t.why_sub}</span>
-                <h2 className="display-6 font-serif mt-2 mb-0">{t.why_title}</h2>
-              </div>
-
-              <div className="col-lg-8">
-                <div className="row g-4">
-                  {t.features && t.features.map((item, index) => (
-                    <div className="col-md-6" key={index} data-aos="fade-up" data-aos-delay={index * 100}>
-                      <div className="d-flex align-items-start gap-3">
-                        <div className="p-2 rounded-3 bg-white shadow-sm d-flex align-items-center justify-content-center" style={{ minWidth: '48px', height: '48px' }}>
-                          <i className={`bi ${item.icon} fs-4`} style={{ color: 'var(--accent-color)' }}></i>
-                        </div>
-                        <div>
-                          <h5 className="fw-bold fs-6 mb-1">{item.title}</h5>
-                          <p className="small text-muted mb-0 leading-relaxed">{item.desc}</p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
       {/* SERVICES CARDS SECTION */}
       <section id="services" className="py-5 my-3" style={{ backgroundColor: 'var(--bg-primary)' }}>
         <div className="container">
@@ -296,36 +240,6 @@ function App() {
           </div>
         </div>
       </section>
-
-      {/* INSTAGRAM FEED WIDGET SECTION
-      <section className="py-5" style={{ backgroundColor: 'var(--bg-primary)' }}>
-        <div className="container text-center" data-aos="fade-up">
-          <div className="d-flex align-items-center justify-content-center gap-2 mb-2">
-            <i className="bi bi-instagram fs-4" style={{ color: '#E1306C' }}></i>
-            <span className="text-uppercase small tracking-widest text-muted" style={{ letterSpacing: '2px' }}>
-              FOLLOW OUR INSTAGRAM
-            </span>
-          </div>
-          <h2 className="display-6 font-serif mb-4">@ovi.eyelash</h2>
-
-          <div className="row g-2 g-md-3">
-            {galleryImages.slice(0, 6).map((img, idx) => (
-              <div className="col-4 col-md-2" key={idx}>
-                <motion.a 
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  href="https://instagram.com/ovi.eyelash" 
-                  target="_blank" 
-                  rel="noreferrer" 
-                  className="d-block overflow-hidden rounded-3 shadow-sm gallery-item-effect"
-                >
-                  <img src={img.src} className="img-fluid w-100" alt="Instagram Post" style={{ aspectRatio: '1/1', objectFit: 'cover' }} />
-                </motion.a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
 
       {/* SECTION RATING & REVIEWS GOOGLE */}
       <section className="py-5" style={{ backgroundColor: 'var(--bg-secondary)' }}>
@@ -447,7 +361,7 @@ function App() {
         </div>
       </section>
 
-      {/* MODAL DETAIL SERVICE DENGAN ANIMASI */}
+      {/* MODAL DETAIL SERVICE DENGAN ANIMASI & GRID BARU */}
       <AnimatePresence>
         {selectedService && (
           <div className="modal fade show d-block" style={{ backgroundColor: 'rgba(0,0,0,0.6)' }}>
@@ -465,6 +379,8 @@ function App() {
                   <button type="button" className="btn-close" onClick={() => setSelectedService(null)}></button>
                 </div>
                 <div className="modal-body p-4" style={{ maxHeight: '70vh', overflowY: 'auto' }}>
+                  
+                  {/* CALLUS CARE TREATMENT (JIKA ADA) */}
                   {selectedService.callusCare && (
                     <div className="p-3 bg-white shadow-sm mb-4 border-start border-4 border-dark rounded-3">
                       <span className="badge bg-dark mb-1">{selectedService.callusCare.badge}</span>
@@ -482,11 +398,54 @@ function App() {
                     </div>
                   )}
 
-                  {selectedService.nailArt && (
-                    <div className="row g-3">
+                  {/* GRID KARTU KATEGORI */}
+                  <div className="row g-3">
+                    
+                    {/* MANICURE */}
+                    {selectedService.manicureServices && (
                       <div className="col-md-6">
                         <div className="p-3 bg-white shadow-sm h-100 rounded-3">
-                          <h5 className="fw-bold font-serif fs-4 mb-3">Nail Art / Add On</h5>
+                          <h5 className="fw-bold font-serif fs-4 mb-3 border-bottom pb-2">Manicure</h5>
+                          <ul className="list-unstyled small mb-0">
+                            {selectedService.manicureServices.map((item, idx) => (
+                              <li className="py-2 border-bottom" key={idx}>
+                                <div className="d-flex justify-content-between align-items-center fw-bold">
+                                  <span>{item.name}</span>
+                                  <span className="fs-6 text-dark">{item.price}</span>
+                                </div>
+                                {item.desc && <p className="small text-muted mb-0 mt-1">{item.desc}</p>}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* PEDICURE */}
+                    {selectedService.pedicureServices && (
+                      <div className="col-md-6">
+                        <div className="p-3 bg-white shadow-sm h-100 rounded-3">
+                          <h5 className="fw-bold font-serif fs-4 mb-3 border-bottom pb-2">Pedicure</h5>
+                          <ul className="list-unstyled small mb-0">
+                            {selectedService.pedicureServices.map((item, idx) => (
+                              <li className="py-2 border-bottom" key={idx}>
+                                <div className="d-flex justify-content-between align-items-center fw-bold">
+                                  <span>{item.name}</span>
+                                  <span className="fs-6 text-dark">{item.price}</span>
+                                </div>
+                                {item.desc && <p className="small text-muted mb-0 mt-1">{item.desc}</p>}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* NAIL ART / ADD ON */}
+                    {selectedService.nailArt && (
+                      <div className="col-md-6">
+                        <div className="p-3 bg-white shadow-sm h-100 rounded-3">
+                          <h5 className="fw-bold font-serif fs-4 mb-3 border-bottom pb-2">Nail Art / Add On</h5>
                           <ul className="list-unstyled small mb-0">
                             {selectedService.nailArt.map((art, idx) => (
                               <li className="d-flex justify-content-between py-1 border-bottom" key={idx}>
@@ -496,9 +455,13 @@ function App() {
                           </ul>
                         </div>
                       </div>
+                    )}
+
+                    {/* REMOVAL SERVICE */}
+                    {selectedService.removals && (
                       <div className="col-md-6">
                         <div className="p-3 bg-white shadow-sm h-100 rounded-3">
-                          <h5 className="fw-bold font-serif fs-4 mb-3">Removal Service</h5>
+                          <h5 className="fw-bold font-serif fs-4 mb-3 border-bottom pb-2">Removal Service</h5>
                           <ul className="list-unstyled small mb-0">
                             {selectedService.removals.map((rem, idx) => (
                               <li className="d-flex justify-content-between py-1 border-bottom" key={idx}>
@@ -508,12 +471,13 @@ function App() {
                           </ul>
                         </div>
                       </div>
-                    </div>
-                  )}
+                    )}
+                  </div>
 
+                  {/* LASH SETS */}
                   {selectedService.lashSets && (
                     <div className="p-3 bg-white shadow-sm rounded-3">
-                      <h5 className="fw-bold font-serif fs-4 mb-3">Lash Sets</h5>
+                      <h5 className="fw-bold font-serif fs-4 mb-3 border-bottom pb-2">Lash Sets</h5>
                       <ul className="list-unstyled small mb-0">
                         {selectedService.lashSets.map((lash, idx) => (
                           <li className="d-flex justify-content-between py-2 border-bottom" key={idx}>
@@ -525,6 +489,7 @@ function App() {
                     </div>
                   )}
 
+                  {/* BROW ITEMS */}
                   {selectedService.browItems && (
                     <div className="row g-3">
                       {selectedService.browItems.map((brow, idx) => (
@@ -534,7 +499,7 @@ function App() {
                               <h5 className="fw-bold font-serif mb-0">{brow.name}</h5>
                               <span className="fw-bold fs-5">{brow.price}</span>
                             </div>
-                            <p className="small text-muted mb-0">{brow.desc}</p>
+                            <p className="small text-muted mb-0 mt-1">{brow.desc}</p>
                           </div>
                         </div>
                       ))}

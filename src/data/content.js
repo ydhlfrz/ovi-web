@@ -2,11 +2,60 @@ export const servicesData = [
   {
     id: "nail",
     category: "Nail Service",
-    subtitle: "Callus Care, Nail Art & Add Ons",
+    subtitle: "Manicure, Pedicure, Callus Care, Nail Art & Removals",
     icon: "bi-heart",
     image: "/images/nail-thumb.png",
     fallbackImage: "https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=800",
     modalTitle: "Nail Service Price List",
+
+    // KATEGORI MANICURE TERBARU
+    manicureServices: [
+      { 
+        name: "Russian Manicure + Gel", 
+        desc: "E-File Technique + Gel Polish", 
+        price: "250K" 
+      },
+      { 
+        name: "BIAB with Russian Manicure", 
+        desc: "E-File Technique + Strengthener Overlay + Colour and Nourishing Oil", 
+        price: "365K" 
+      },
+      { 
+        name: "Express Manicure Only", 
+        desc: "Cleaning, Shaping, Cuticle Care, Buffing, Shining and Nourishing Oil", 
+        price: "175K" 
+      },
+      { 
+        name: "Gel X Extensions", 
+        desc: "E-File Technique, Extension with Soft Gel Tips, Colour and Nourishing Oil", 
+        price: "350K" 
+      },
+      { 
+        name: "Gel Extensions", 
+        desc: "E-File Technique, Extension with Builder Gel/Hard Gel, Colour and Nourishing Oil", 
+        price: "450K" 
+      }
+    ],
+
+    // KATEGORI PEDICURE TERBARU
+    pedicureServices: [
+      { 
+        name: "Russian Pedi + Gel Polish", 
+        desc: "E-File Pedicure + Gel Polish and Nourishing Oil", 
+        price: "285K" 
+      },
+      { 
+        name: "Russian Pedi with Overlay", 
+        desc: "E-File Pedicure with Overlay, Gel Colour and Nourishing Oil", 
+        price: "325K" 
+      },
+      { 
+        name: "Foot Spa", 
+        desc: "Dry Cuticle Care with Drill Machine, Shaping, Exfoliating Scrub, Callus Removal, Soak in Relaxing Water and Salt, 15 Minutes Foot Massage with Nourishing Cream", 
+        price: "200K" 
+      }
+    ],
+
     callusCare: {
       title: "Callus Care Treatment",
       badge: "Dr. Fetto Products",
@@ -18,6 +67,7 @@ export const servicesData = [
         { name: "Heavy - Severely dry feet with deep heel cracks", price: "400K", gelPrice: "450K" }
       ]
     },
+
     nailArt: [
       { name: "Single Nail Repair with Gel", price: "30K" },
       { name: "Soft Gel Tips Extensions", price: "35K" },
@@ -27,6 +77,7 @@ export const servicesData = [
       { name: "3D/Embossed Art", price: "10K-15K" },
       { name: "Polygel/Acrylic Extensions", price: "45K" }
     ],
+
     removals: [
       { name: "Gel Polish Removal from Ovi", price: "7K" },
       { name: "Gel Polish Removal from Other Salon", price: "10K" },
