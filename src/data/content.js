@@ -73,14 +73,14 @@ export const servicesData = [
 ];
 
 export const galleryImages = [
-  { id: 1, src: "/images/gallery-1.jpeg", title: "" },
-  { id: 2, src: "/images/gallery-2.jpeg", title: "" },
-  { id: 3, src: "/images/gallery-3.jpeg", title: "" },
-  { id: 4, src: "/images/gallery-4.jpeg", title: "" },
-  { id: 5, src: "/images/gallery-5.jpeg", title: "" },
-  { id: 6, src: "/images/gallery-6.jpeg", title: "" },
-  { id: 7, src: "/images/gallery-7.jpeg", title: "" },
-  { id: 8, src: "/images/gallery-8.jpeg", title: "" }
+  { id: 1, src: "/images/gallery-1.png", title: "" },
+  { id: 2, src: "/images/gallery-2.png", title: "" },
+  { id: 3, src: "/images/gallery-3.png", title: "" },
+  { id: 4, src: "/images/gallery-4.png", title: "" },
+  { id: 5, src: "/images/gallery-5.png", title: "" },
+  { id: 6, src: "/images/gallery-6.png", title: "" },
+  { id: 7, src: "/images/gallery-7.png", title: "" },
+  { id: 8, src: "/images/gallery-8.png", title: "" }
 ];
 
 export const translations = {
@@ -96,10 +96,10 @@ export const translations = {
     hero_location: "Kuta, Lombok, Indonesia",
     btn_book_wa: "Book on WhatsApp",
     about_sub: "ABOUT OVI",
-    about_title: "More Than Just A Beauty Studio",
-    about_desc: "At Ovi, we believe beauty is a form of self-care. Our studio in Kuta, Lombok, offers a calm and comfortable space where you can relax, refresh, and feel your best — from perfectly done lashes to healthy nails and brows.",
+    about_title: "Perfect lashes. Flawless nails. Zero effort.",
+    about_desc: "Crafted by detail-obsessed technicians using top-tier products. Whether you need a subtle boost or a full beach-glam transformation, we guarantee you’ll walk out feeling unmatched. Don’t wait until our slots fill up — Book your appointment now!",
     why_sub: "WHY CHOOSE US",
-    why_title: "Why Choose OVI Studio?",
+    why_title: "Why Choose OVI Eyelash?",
     services_sub: "OUR SERVICES",
     services_title: "Treatments & Price List",
     see_details: "See Details",
@@ -119,7 +119,29 @@ export const translations = {
     follow_us: "Follow Our Social Media",
     follow_desc: "Follow us for updates, promos, and latest works!",
     close: "Close",
-    book_service_wa: "Book via WhatsApp"
+    book_service_wa: "Book via WhatsApp",
+    features: [
+      {
+        icon: "bi-person-badge",
+        title: "Handled by Professionals",
+        desc: "Our certified therapists ensure precise, neat, and flattering results tailored to your unique beauty."
+      },
+      {
+        icon: "bi-shield-check",
+        title: "Sterilized Equipment Guarantee",
+        desc: "Your health and safety come first. All our tools undergo hospital-grade sterilization before every use."
+      },
+      {
+        icon: "bi-gem",
+        title: "Premium Quality Materials",
+        desc: "We use high-end, gentle products that protect your natural lashes and nails while ensuring long-lasting wear."
+      },
+      {
+        icon: "bi-flower1",
+        title: "Relaxing & Aesthetic Ambiance",
+        desc: "Enjoy your treatment in a quiet, fresh, and soothing atmosphere in Kuta Lombok for the ultimate self-care day."
+      }
+    ]
   },
   id: {
     nav_home: "Beranda",
@@ -133,10 +155,10 @@ export const translations = {
     hero_location: "Kuta, Lombok, Indonesia",
     btn_book_wa: "Booking via WhatsApp",
     about_sub: "TENTANG OVI",
-    about_title: "Lebih Dari Sekadar Studio Kecantikan",
-    about_desc: "Di Ovi, kami percaya kecantikan adalah bentuk perawatan diri. Studio kami di Kuta, Lombok menyajikan ruang yang tenang dan nyaman untuk bersantai, menyegarkan diri, dan tampil percaya diri — dari bulu mata yang rapi hingga kuku dan alis yang sehat.",
-    why_sub: "MENGAPA PILIH KAMI",
-    why_title: "Mengapa Memilih OVI Studio?",
+    about_title: "Bulu mata sempurna. Kuku rapi. Tanpa ribet.",
+    about_desc: "Dikerjakan oleh teknisi ahli yang sangat teliti dengan produk kelas atas. Baik kamu menginginkan tampilan alami maupun transformasi beach-glam maksimal, kami garansi kamu akan pulang dengan rasa percaya diri penuh. Slot harian terbatas — Pesan perawatanmu sekarang juga!",
+    why_sub: "MENGAPA MEMILIH KAMI",
+    why_title: "Mengapa Memilih OVI Eyelash?",
     services_sub: "LAYANAN KAMI",
     services_title: "Pilihan Perawatan & Daftar Harga",
     see_details: "Lihat Detail",
@@ -156,6 +178,28 @@ export const translations = {
     follow_us: "Ikuti Sosial Media Kami",
     follow_desc: "Ikuti kami untuk update promo dan hasil pengerjaan terbaru!",
     close: "Tutup",
-    book_service_wa: "Booking via WhatsApp"
+    book_service_wa: "Booking via WhatsApp",
+    features: [
+      {
+        icon: "bi-person-badge",
+        title: "Ditangani oleh Profesional",
+        desc: "Terapis tersertifikasi kami memastikan hasil yang presisi, rapi, dan sesuai dengan kecantikan unikmu."
+      },
+      {
+        icon: "bi-shield-check",
+        title: "Garansi Peralatan Steril",
+        desc: "Kesehatan dan keamananmu adalah prioritas utama. Semua alat melalui proses sterilisasi standar medis sebelum digunakan."
+      },
+      {
+        icon: "bi-gem",
+        title: "Bahan Berkualitas Premium",
+        desc: "Kami menggunakan produk kelas atas yang lembut dan aman untuk menjaga kesehatan bulu mata serta kuku aslimu."
+      },
+      {
+        icon: "bi-flower1",
+        title: "Suasana Nyaman & Estetik",
+        desc: "Nikmati perawatan dalam suasana yang tenang, segar, dan santai di Kuta Lombok untuk pengalaman pampering terbaik."
+      }
+    ]
   }
 };

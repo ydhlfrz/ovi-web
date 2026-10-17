@@ -1,7 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './App.css';
+
+// IMPORT LIBRARY AOS & CSS-NYA
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 import { servicesData, galleryImages, translations } from './data/content';
 
 function App() {
@@ -11,6 +16,16 @@ function App() {
   const [previewImage, setPreviewImage] = useState(null);
 
   const t = translations[lang];
+
+  // INISIALISASI AOS SAAT KOMPONEN PERTAMA KALI DIMUAT
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: 'ease-out-cubic',
+      offset: 100,
+    });
+  }, []);
 
   return (
     <div>
@@ -66,14 +81,14 @@ function App() {
         </div>
       </nav>
 
-      {/* HERO SECTION DENGAN RESPONSIF GAMBAR HP */}
+      {/* HERO SECTION */}
       <section id="home" className="position-relative py-5 d-flex align-items-center hero-section" style={{
         minHeight: '85vh',
         background: `linear-gradient(to right, rgba(250, 244, 246, 0.95) 0%, rgba(250, 244, 246, 0.85) 50%, rgba(250, 244, 246, 0.4) 100%), url('/images/hero-bg.png') center right/cover no-repeat`
       }}>
         <div className="container py-4 py-md-5">
           <div className="row">
-            <div className="col-lg-7 col-md-9 col-12">
+            <div className="col-lg-7 col-md-9 col-12" data-aos="fade-up">
               <p className="text-uppercase fs-6 fw-medium tracking-widest text-muted mb-2" style={{ letterSpacing: '2px' }}>
                 {t.hero_subtitle}
               </p>
@@ -98,17 +113,77 @@ function App() {
         </div>
       </section>
 
-      {/* ABOUT US SECTION */}
+      {/* ABOUT US SECTION (TANPA FOTO) */}
       <section id="about" className="py-5">
         <div className="container py-4">
-          <div className="row align-items-center mb-5">
-            <div className="col-md-5 mb-4 mb-md-0">
-              <img src="/images/about-studio.png" onError={(e) => e.target.src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=800"} className="img-fluid w-100 shadow-sm" alt="Studio" />
+          <div className="row justify-content-center text-center">
+            <div className="col-lg-8" data-aos="fade-up">
+              <span className="text-uppercase small tracking-widest text-muted" style={{ letterSpacing: '2px' }}>
+                {t.about_sub}
+              </span>
+              <h2 className="display-5 font-serif my-3">
+                {t.about_title}
+              </h2>
+              <div style={{ width: '60px', height: '2px', backgroundColor: 'var(--accent-color)', margin: '0 auto 20px' }}></div>
+              <p className="fs-5 text-muted leading-relaxed mb-0">
+                {t.about_desc}
+              </p>
             </div>
-            <div className="col-md-7 ps-md-5">
-              <span className="text-uppercase small tracking-widest text-muted" style={{ letterSpacing: '2px' }}>{t.about_sub}</span>
-              <h2 className="display-5 font-serif my-3">{t.about_title}</h2>
-              <p className="text-muted leading-relaxed mb-4">{t.about_desc}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* 4 HIGHLIGHT ICONS */}
+      <section className="py-4" style={{ backgroundColor: 'var(--bg-primary)' }}>
+        <div className="container">
+          <div className="row text-center g-4 justify-content-center">
+            <div className="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
+              <i className="bi bi-stars fs-1" style={{ color: 'var(--accent-color)' }}></i>
+              <h6 className="fw-bold mt-2 mb-0">Premium Quality Products</h6>
+            </div>
+            <div className="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
+              <i className="bi bi-shield-check fs-1" style={{ color: 'var(--accent-color)' }}></i>
+              <h6 className="fw-bold mt-2 mb-0">Clean & Hygienic Studio</h6>
+            </div>
+            <div className="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
+              <i className="bi bi-heart fs-1" style={{ color: 'var(--accent-color)' }}></i>
+              <h6 className="fw-bold mt-2 mb-0">Personalized Care</h6>
+            </div>
+            <div className="col-6 col-md-3" data-aos="fade-up" data-aos-delay="400">
+              <i className="bi bi-feather fs-1" style={{ color: 'var(--accent-color)' }}></i>
+              <h6 className="fw-bold mt-2 mb-0">A Welcoming Experience</h6>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WHY CHOOSE US SECTION */}
+      <section className="py-5">
+        <div className="container">
+          <div className="p-4 p-md-5 rounded-4 shadow-sm" style={{ backgroundColor: 'var(--bg-secondary)', borderLeft: '4px solid var(--accent-color)' }} data-aos="fade-up">
+            <div className="row align-items-center g-4">
+              <div className="col-lg-4" data-aos="fade-right">
+                <span className="text-uppercase small tracking-widest text-muted" style={{ letterSpacing: '2px' }}>{t.why_sub}</span>
+                <h2 className="display-6 font-serif mt-2 mb-0">{t.why_title}</h2>
+              </div>
+
+              <div className="col-lg-8">
+                <div className="row g-4">
+                  {t.features && t.features.map((item, index) => (
+                    <div className="col-md-6" key={index} data-aos="fade-up" data-aos-delay={index * 100}>
+                      <div className="d-flex align-items-start gap-3">
+                        <div className="p-2 rounded-3 bg-white shadow-sm d-flex align-items-center justify-content-center" style={{ minWidth: '48px', height: '48px' }}>
+                          <i className={`bi ${item.icon} fs-4`} style={{ color: 'var(--accent-color)' }}></i>
+                        </div>
+                        <div>
+                          <h5 className="fw-bold fs-6 mb-1">{item.title}</h5>
+                          <p className="small text-muted mb-0 leading-relaxed">{item.desc}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -117,17 +192,17 @@ function App() {
       {/* SERVICES CARDS SECTION */}
       <section id="services" className="py-5 my-3" style={{ backgroundColor: 'var(--bg-primary)' }}>
         <div className="container">
-          <div className="text-center mb-5">
+          <div className="text-center mb-5" data-aos="fade-up">
             <span className="text-uppercase small tracking-widest text-muted" style={{ letterSpacing: '2px' }}>{t.services_sub}</span>
             <h2 className="display-5 font-serif mt-1">{t.services_title}</h2>
             <div style={{ width: '60px', height: '2px', backgroundColor: 'var(--accent-color)', margin: '15px auto 0' }}></div>
           </div>
 
           <div className="row g-4 justify-content-center">
-            {servicesData.map((item) => (
-              <div className="col-md-4" key={item.id}>
-                <div className="card service-card shadow-sm h-100" onClick={() => setSelectedService(item)}>
-                  <div className="service-card-img-wrapper">
+            {servicesData.map((item, index) => (
+              <div className="col-md-4" key={item.id} data-aos="fade-up" data-aos-delay={index * 150}>
+                <div className="card service-card card-hover-effect shadow-sm h-100 border-0" onClick={() => setSelectedService(item)}>
+                  <div className="service-card-img-wrapper overflow-hidden">
                     <img src={item.image} onError={(e) => e.target.src = item.fallbackImage} alt={item.category} />
                     <div className="service-card-overlay">
                       <span className="btn btn-light rounded-pill px-4 py-2 fw-bold text-uppercase shadow-sm" style={{ letterSpacing: '1px' }}>
@@ -146,10 +221,10 @@ function App() {
         </div>
       </section>
 
-      {/* GALLERY SECTION (DENGAN EFEK HOVER) */}
+      {/* GALLERY SECTION */}
       <section id="gallery" className="py-5" style={{ backgroundColor: 'var(--bg-secondary)' }}>
         <div className="container">
-          <div className="d-flex justify-content-between align-items-end mb-4">
+          <div className="d-flex justify-content-between align-items-end mb-4" data-aos="fade-up">
             <div>
               <span className="text-uppercase small tracking-widest text-muted" style={{ letterSpacing: '2px' }}>{t.work_sub}</span>
               <h2 className="display-6 font-serif m-0">{t.work_title}</h2>
@@ -160,10 +235,10 @@ function App() {
           </div>
 
           <div className="row g-3">
-            {galleryImages.slice(0, 8).map((img) => (
-              <div className="col-6 col-md-3" key={img.id}>
-                <div className="gallery-item shadow-sm" onClick={() => setPreviewImage(img)}>
-                  <img src={img.src} className="img-fluid" alt={img.title} />
+            {galleryImages.slice(0, 8).map((img, index) => (
+              <div className="col-6 col-md-3" key={img.id} data-aos="fade-up" data-aos-delay={(index % 4) * 100}>
+                <div className="gallery-item gallery-item-effect shadow-sm rounded-4 overflow-hidden" onClick={() => setPreviewImage(img)} style={{ cursor: 'pointer' }}>
+                  <img src={img.src} className="img-fluid w-100" alt={img.title} />
                 </div>
               </div>
             ))}
@@ -174,24 +249,26 @@ function App() {
       {/* SECTION RATING & REVIEWS GOOGLE */}
       <section className="py-5" style={{ backgroundColor: 'var(--bg-primary)' }}>
         <div className="container text-center">
-          <span className="text-uppercase small tracking-widest text-muted" style={{ letterSpacing: '2px' }}>{t.review_sub}</span>
-          <h2 className="display-6 font-serif mt-1 mb-3">{t.review_title}</h2>
+          <div data-aos="fade-up">
+            <span className="text-uppercase small tracking-widest text-muted" style={{ letterSpacing: '2px' }}>{t.review_sub}</span>
+            <h2 className="display-6 font-serif mt-1 mb-3">{t.review_title}</h2>
 
-          <div className="d-inline-flex align-items-center bg-white px-4 py-2 rounded-pill shadow-sm mb-4">
-            <span className="fw-bold fs-4 me-2">5.0</span>
-            <div className="text-warning me-2 fs-5">
-              <i className="bi bi-star-fill"></i>
-              <i className="bi bi-star-fill"></i>
-              <i className="bi bi-star-fill"></i>
-              <i className="bi bi-star-fill"></i>
-              <i className="bi bi-star-fill"></i>
+            <div className="d-inline-flex align-items-center bg-white px-4 py-2 rounded-pill shadow-sm mb-4">
+              <span className="fw-bold fs-4 me-2">5.0</span>
+              <div className="text-warning me-2 fs-5">
+                <i className="bi bi-star-fill"></i>
+                <i className="bi bi-star-fill"></i>
+                <i className="bi bi-star-fill"></i>
+                <i className="bi bi-star-fill"></i>
+                <i className="bi bi-star-fill"></i>
+              </div>
+              <span className="text-muted small border-start ps-2">{t.reviewed_on} <i className="bi bi-google text-primary ms-1"></i> Google Maps</span>
             </div>
-            <span className="text-muted small border-start ps-2">{t.reviewed_on} <i className="bi bi-google text-primary ms-1"></i> Google Maps</span>
           </div>
 
           <div className="row g-4 text-start">
-            <div className="col-md-4">
-              <div className="bg-white p-4 h-100 shadow-sm rounded-0">
+            <div className="col-md-4" data-aos="fade-up" data-aos-delay="100">
+              <div className="bg-white p-4 h-100 shadow-sm rounded-3">
                 <div className="text-warning mb-2">
                   <i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i>
                 </div>
@@ -199,8 +276,8 @@ function App() {
                 <div className="fw-bold small">— Yuliana Yustina</div>
               </div>
             </div>
-            <div className="col-md-4">
-              <div className="bg-white p-4 h-100 shadow-sm rounded-0">
+            <div className="col-md-4" data-aos="fade-up" data-aos-delay="200">
+              <div className="bg-white p-4 h-100 shadow-sm rounded-3">
                 <div className="text-warning mb-2">
                   <i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i>
                 </div>
@@ -208,8 +285,8 @@ function App() {
                 <div className="fw-bold small">— A. Hermann</div>
               </div>
             </div>
-            <div className="col-md-4">
-              <div className="bg-white p-4 h-100 shadow-sm rounded-0">
+            <div className="col-md-4" data-aos="fade-up" data-aos-delay="300">
+              <div className="bg-white p-4 h-100 shadow-sm rounded-3">
                 <div className="text-warning mb-2">
                   <i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i><i className="bi bi-star-fill"></i>
                 </div>
@@ -219,7 +296,7 @@ function App() {
             </div>
           </div>
 
-          <div className="mt-4">
+          <div className="mt-4" data-aos="fade-up" data-aos-delay="400">
             <a href="https://maps.app.goo.gl/fCEPpsCo36EUN9ex5?g_st=iwb" target="_blank" rel="noreferrer" className="btn btn-outline-dark btn-sm rounded-pill px-4">
               <i className="bi bi-google me-1"></i> {t.see_all_reviews} &rarr;
             </a>
@@ -231,8 +308,8 @@ function App() {
       <section id="contact" className="py-5" style={{ backgroundColor: 'var(--bg-secondary)' }}>
         <div className="container">
           <div className="row align-items-center g-4">
-            <div className="col-lg-6">
-              <div className="shadow-sm overflow-hidden" style={{ borderRadius: '4px', height: '350px' }}>
+            <div className="col-lg-6" data-aos="fade-right">
+              <div className="shadow-sm overflow-hidden rounded-4" style={{ height: '350px' }}>
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15764.71714930353!2d116.2750!3d-8.8920!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dc2f5e3e218204b%3A0x88981665a31a986d!2sKuta%2C%20Pujut%2C%20Central%20Lombok%20Regency%2C%20West%20Nusa%2 Tenggara!5e0!3m2!1sen!2sid!4v1710000000000!5m2!1sen!2sid" 
                   width="100%" 
@@ -246,7 +323,7 @@ function App() {
               </div>
             </div>
 
-            <div className="col-lg-6 ps-lg-5">
+            <div className="col-lg-6 ps-lg-5" data-aos="fade-left">
               <span className="text-uppercase small tracking-widest text-muted" style={{ letterSpacing: '2px' }}>{t.find_us}</span>
               <h2 className="display-6 font-serif mb-4">{t.visit_title}</h2>
 
@@ -387,7 +464,7 @@ function App() {
         </div>
       )}
 
-      {/* MODAL ALL GALLERY (DENGAN EFEK HOVER) */}
+      {/* MODAL ALL GALLERY */}
       {showGalleryModal && (
         <div className="modal fade show d-block" style={{ backgroundColor: 'rgba(0,0,0,0.6)' }}>
           <div className="modal-dialog modal-dialog-centered modal-xl">
@@ -400,8 +477,8 @@ function App() {
                 <div className="row g-3">
                   {galleryImages.map((img) => (
                     <div className="col-6 col-md-4 col-lg-3" key={img.id}>
-                      <div className="gallery-item shadow-sm bg-white p-1" onClick={() => setPreviewImage(img)}>
-                        <img src={img.src} className="img-fluid" alt={img.title} />
+                      <div className="gallery-item gallery-item-effect shadow-sm bg-white p-1 rounded-3 overflow-hidden" onClick={() => setPreviewImage(img)} style={{ cursor: 'pointer' }}>
+                        <img src={img.src} className="img-fluid w-100" alt={img.title} />
                       </div>
                     </div>
                   ))}
