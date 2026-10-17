@@ -117,7 +117,7 @@ export const servicesData = [
       { name: "Brow Lamination", price: "300K", desc: "Brow lift, brow shaving" },
       { 
         name: "K-Glueless Lashlift & Tint", 
-        price: "250K", 
+        price: "300K", 
         badge: "Newest Technique", 
         desc: "The latest K-Lashlift newest technique perform without use of glue. This technique make your natural lashes straight from the root, revealing every bit of their length for the wide open, K-Beauty gaze." 
       }
