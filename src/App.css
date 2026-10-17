@@ -150,35 +150,38 @@ h1, h2, h3, h4, .font-serif {
   }
 }
 
-/* Responsif Layar HP (Mobile) */
+/* Penyesuaian Tampilan Responsif Layar HP (Mobile) */
 @media (max-width: 991.98px) {
   .hero-section {
-    /* Gradient transparan dibuat lebih tipis dari kiri ke kanan agar gambar di sebelah kanan tetap terlihat */
+    /* Overlay gradient dibuat sangat tipis (0.4 ke 0.75) dari atas ke bawah */
     background: linear-gradient(
-      to right, 
-      rgba(250, 244, 246, 0.95) 0%, 
-      rgba(250, 244, 246, 0.7) 50%, 
-      rgba(250, 244, 246, 0.25) 100%
-    ), url('/images/hero-bg.jpg') center right/cover no-repeat !important;
-    min-height: 80vh !important;
-    padding-top: 3rem !important;
+      to bottom, 
+      rgba(250, 244, 246, 0.35) 0%, 
+      rgba(250, 244, 246, 0.75) 50%,
+      rgba(250, 244, 246, 0.95) 100%
+    ), url('/images/hero-bg.jpg') center top / cover no-repeat !important;
+    min-height: 85vh !important;
+    padding-top: 2rem !important;
     padding-bottom: 3rem !important;
+    display: flex !important;
+    align-items: flex-end !important; /* Mendorong teks ke bawah agar wajah/kuku model di atas terlihat */
   }
 
   .hero-title {
-    font-size: 2.3rem !important;
+    font-size: 2.2rem !important;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
   }
 
-  /* Dropdown Hamburger Menu di HP */
+  /* Hamburger Menu Pop-up */
   .navbar-collapse {
     background-color: var(--bg-primary);
-    padding: 1rem;
+    padding: 1.2rem;
     border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   }
   
   .nav-link {
-    margin: 4px 0 !important;
-    font-size: 1.1rem !important;
+    margin: 6px 0 !important;
+    font-size: 1.15rem !important;
   }
 }
