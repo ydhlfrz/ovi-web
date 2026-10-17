@@ -81,7 +81,6 @@ export const servicesData = [
     removals: [
       { name: "Gel Polish Removal from Ovi", price: "7K" },
       { name: "Gel Polish Removal from Other Salon", price: "10K" },
-      { name: "Removal Extension/Builder Gel from Ovi", price: "8.5K" },
       { name: "Removal Extension/Builder Gel from Other Salon", price: "15K" }
     ]
   },
