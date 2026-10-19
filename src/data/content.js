@@ -126,16 +126,16 @@ export const servicesData = [
 ];
 
 export const galleryImages = [
-  { id: 1, src: "/images/gallery-1.png", title: "" },
-  { id: 2, src: "/images/gallery-2.png", title: "" },
-  { id: 3, src: "/images/gallery-3.png", title: "" },
-  { id: 4, src: "/images/gallery-4.png", title: "" },
-  { id: 5, src: "/images/gallery-5.png", title: "" },
-  { id: 6, src: "/images/gallery-6.png", title: "" },
-  { id: 7, src: "/images/gallery-7.png", title: "" },
-  { id: 8, src: "/images/gallery-8.png", title: "" },
-  { id: 9, src: "/images/gallery-9.png", title: "" },
-  { id: 10, src: "/images/gallery-10.png", title: "" }
+  { id: 1, src: "/images/gallery-1.png", title: "Brow and Lashes" },
+  { id: 2, src: "/images/gallery-2.png", title: "Brow" },
+  { id: 3, src: "/images/gallery-3.png", title: "Nail Art" },
+  { id: 4, src: "/images/gallery-4.png", title: "Lashes Service" },
+  { id: 5, src: "/images/gallery-5.png", title: "Callus Service" },
+  { id: 6, src: "/images/gallery-6.png", title: "Lashes Result" },
+  { id: 7, src: "/images/gallery-7.png", title: "Nail Art" },
+  { id: 8, src: "/images/gallery-8.png", title: "Brow and Lashes" },
+  { id: 9, src: "/images/gallery-9.png", title: "Brow and Lashes" },
+  { id: 10, src: "/images/gallery-10.jpeg", title: "Lashes Service" }
 ];
 
 export const translations = {
