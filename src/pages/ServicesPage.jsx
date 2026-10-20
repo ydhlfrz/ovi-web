@@ -300,6 +300,22 @@ function ServicesPage({ t }) {
                       </ul>
                     </div>
                   )}
+                  {/* LASH ADD ONS & REMOVALS */}
+                  {selectedService.addOns && (
+                    <div className="p-3 p-md-4 bg-light shadow-sm rounded-3 mt-4">
+                      <div className="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2">
+                        <h5 className="fw-bold font-serif fs-4 mb-0">Add-Ons & Removal</h5>
+                      </div>
+                      <ul className="list-unstyled small mb-0">
+                        {selectedService.addOns.map((addon, idx) => (
+                          <li className="d-flex justify-content-between py-2 border-bottom" key={idx}>
+                            <span>{addon.name}</span>
+                            <strong>{addon.price}</strong>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
 
                   {/* BROW ITEMS */}
                   {selectedService.browItems && (
