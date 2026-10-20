@@ -66,9 +66,9 @@ export const servicesData = [
     modalTitle: "Eyelash Extensions Price List",
     lashSetsThumb: "/images/lash-thumb.png",
     lashSets: [
-      { name: "Natural Lash (Single Lash)", duration: "2 h", price: "350K", refill: "250K" },
-      { name: "Soft Volume Set (2D/3D)", duration: "2 h", price: "400K", refill: "250K" },
-      { name: "Russian Volume", duration: "2 h", price: "465K", refill: "350K" }
+      { name: "Natural Lash (Single Lash)", duration: "2 h", price: "375K", refill: "250K" },
+      { name: "Soft Volume Set (2D/3D)", duration: "2 h", price: "450K", refill: "250K" },
+      { name: "Russian Volume", duration: "2 h", price: "550K", refill: "350K" }
     ],
     addOns: [
       { name: "Whispy Style", price: "50K" },
