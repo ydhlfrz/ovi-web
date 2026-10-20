@@ -88,7 +88,7 @@ export const servicesData = [
     browThumb: "/images/brow-service.jpg",
     browItems: [
       { name: "Brow Wax", duration: "15 min", price: "100K", desc: "Precision eyebrow shaping and hair removal using gentle wax."},
-      { name: "Brow Bomber", duration: "120 min", price: "350K", desc: "brow lamination, shaving, brow tint, nourish"},
+      { name: "Brow Bomber Wax", duration: "120 min", price: "350K", desc: "brow lamination, shaving, brow tint, nourish"},
       { name: "Brow Wax and Tint", duration: "30 min", price: "180K", desc: "Eyebrow waxing with custom tinting for a fuller look."},
       { name: "Brow Lamination", duration: "1 h", price: "300K", desc: "Brow lift, brow shaving (Without Wax: 250K)"},
       { name: "Brow Lamination + Wax", duration: "1 h 20 min", price: "300K", desc: "Complete brow lamination paired with clean waxing shaping."},
