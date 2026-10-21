@@ -390,8 +390,6 @@ function ServicesPage({ t }) {
       </div>
     </div>
   );
-
-  <FAQSection t={t} />
 }
 
 export default ServicesPage;
