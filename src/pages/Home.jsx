@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import FAQSection from '../components/FAQSection';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, MessageCircle, ArrowRight, Grid, Image as ImageIcon } from 'lucide-react';
 
@@ -141,6 +142,8 @@ function Home({ t }) {
           </div>
         </div>
       </section>
+
+      <FAQSection />
 
       {/* CONTACT SECTION */}
       <section id="contact" className="py-5" style={{ backgroundColor: 'var(--bg-secondary)' }}>
