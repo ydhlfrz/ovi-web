@@ -171,7 +171,7 @@ function Home({ t }) {
                   </a>
                 </div>
 
-                {/* BAGIAN SOCIAL MEDIA DIKEMBALIKAN */}
+                {/* SOCIAL MEDIA SECTION */}
                 <div className="col-md-12 pt-2">
                   <h6 className="fw-bold mb-3">{t.follow_us}</h6>
                   <div className="d-flex align-items-center gap-2">
