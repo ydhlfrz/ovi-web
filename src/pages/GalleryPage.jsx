@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import { galleryImages } from '../data/content';
 
@@ -7,6 +8,14 @@ function GalleryPage({ t }) {
 
   return (
     <div className="py-5" style={{ minHeight: '80vh', backgroundColor: 'var(--bg-secondary)' }}>
+      
+      {/* Dynamic SEO Metadata */}
+      <Helmet>
+        <title>Client Portfolio & Gallery | OVI Eyelash & Nail Studio Lombok</title>
+        <meta name="description" content="Explore real treatment results from OVI Studio Kuta Lombok. Browse our portfolio of Eyelash Extensions, Korean Lashlift, and Gel Nail Art." />
+        <link rel="canonical" href="https://ovieyelash.com/gallery" />
+      </Helmet>
+
       <div className="container py-4">
         <div className="text-center mb-5" data-aos="fade-up">
           <span className="text-uppercase small tracking-widest text-muted" style={{ letterSpacing: '2px' }}>{t.work_sub}</span>
@@ -24,7 +33,12 @@ function GalleryPage({ t }) {
                 onClick={() => setPreviewImage(img)} 
                 style={{ cursor: 'pointer' }}
               >
-                <img src={img.src} className="img-fluid w-100" alt="OVI Studio Work" style={{ height: '260px', objectFit: 'cover' }} />
+                <img 
+                  src={img.src} 
+                  className="img-fluid w-100" 
+                  alt={img.title || `OVI Eyelash & Nail Studio Portfolio Kuta Lombok - Work ${img.id}`} 
+                  style={{ height: '260px', objectFit: 'cover' }} 
+                />
               </motion.div>
             </div>
           ))}
@@ -43,7 +57,12 @@ function GalleryPage({ t }) {
                 transition={{ duration: 0.2 }}
                 className="modal-content bg-transparent border-0 text-center"
               >
-                <img src={previewImage.src} className="img-fluid rounded shadow-lg" style={{ maxHeight: '80vh', objectFit: 'contain' }} alt="Gallery Preview" />
+                <img 
+                  src={previewImage.src} 
+                  className="img-fluid rounded shadow-lg" 
+                  style={{ maxHeight: '80vh', objectFit: 'contain' }} 
+                  alt={previewImage.title || `OVI Eyelash & Nail Studio Portfolio Kuta Lombok - Full View`} 
+                />
               </motion.div>
             </div>
           </div>
