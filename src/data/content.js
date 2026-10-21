@@ -208,3 +208,60 @@ export const translations = {
     btn_view_gallery_all: "Lihat Seluruh Galeri"
   }
 };
+
+export const content = {
+  id: {
+    // ... data translasi Indonesia lainnya ...
+    faq_sub: "Pertanyaan Umum",
+    faq_title: "Pertanyaan Yang Sering Diajukan",
+    faq_list: [
+      {
+        q: "Berapa lama ketahanan Eyelash Extension di OVI Studio?",
+        a: "Eyelash extension kami umumnya bertahan 3 hingga 4 minggu, tergantung pada siklus bulu mata alami dan perawatan harian Anda. Kami menyarankan untuk melakukan refill setiap 2–3 minggu agar tampilan tetap lebat dan rapi."
+      },
+      {
+        q: "Apa perbedaan Korean Lashlift & Tint dengan Eyelash Extension?",
+        a: "Korean Lashlift melentikkan dan memberi warna hitam pekat pada bulu mata asli Anda tanpa menambahkan bulu mata sintetis. Sedangkan Eyelash Extension menambahkan helaian bulu mata sintetis untuk efek yang lebih panjang dan tebal."
+      },
+      {
+        q: "Apakah saya harus melakukan booking/reservasi terlebih dahulu?",
+        a: "Sangat disarankan! Untuk memastikan ketersediaan jadwal slot terapis dan kenyamanan Anda, harap melakukan reservasi via WhatsApp sebelum datang ke studio kami di Kuta Lombok."
+      },
+      {
+        q: "Berapa lama pengerjaan Gel Manicure atau Nail Art?",
+        a: "Pengerjaan Gel Manicure standar memakan waktu sekitar 45–60 menit. Jika menambah desain Nail Art atau perawatan Callus Care, waktu pengerjaan berkisar antara 75–120 menit."
+      },
+      {
+        q: "Di mana lokasi OVI Eyelash & Nail Studio?",
+        a: "Studio kami berlokasi strategis di area Kuta, Pujut, Lombok Tengah (dekat dengan kawasan wisata Kuta Mandalika). Anda dapat menghubungi kami via WhatsApp untuk petunjuk rute presisi."
+      }
+    ]
+  },
+  en: {
+    // ... data translasi Inggris lainnya ...
+    faq_sub: "Frequently Asked Questions",
+    faq_title: "Frequently Asked Questions",
+    faq_list: [
+      {
+        q: "How long do eyelash extensions last at OVI Studio?",
+        a: "Our eyelash extensions typically last 3 to 4 weeks depending on your natural lash cycle and daily aftercare. We recommend getting a refill every 2 to 3 weeks to keep them looking full and neat."
+      },
+      {
+        q: "What is the difference between Korean Lashlift & Tint and Eyelash Extensions?",
+        a: "Korean Lashlift curls and tints your natural lashes without adding synthetic extensions. Eyelash Extensions add individual synthetic lash fibers to achieve extra length, volume, and thickness."
+      },
+      {
+        q: "Do I need to book an appointment in advance?",
+        a: "Highly recommended! To secure your preferred time slot and ensure seamless service, please make a booking via WhatsApp prior to visiting our studio in Kuta Lombok."
+      },
+      {
+        q: "How long does a Gel Manicure or Nail Art session take?",
+        a: "A standard Gel Manicure session takes around 45–60 minutes. Adding custom Nail Art designs or Callus Care treatment extends the duration to about 75–120 minutes."
+      },
+      {
+        q: "Where is OVI Eyelash & Nail Studio located?",
+        a: "Our studio is conveniently located in Kuta, Pujut, Central Lombok (close to the Kuta Mandalika tourist area). Feel free to message us on WhatsApp for exact location directions."
+      }
+    ]
+  }
+};

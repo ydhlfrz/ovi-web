@@ -1,44 +1,46 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { ChevronDown, HelpCircle } from 'lucide-react';
 
-const faqData = [
-  {
-    q: "Berapa lama ketahanan Eyelash Extension di OVI Studio?",
-    a: "Eyelash extension kami umumnya bertahan 3 hingga 4 minggu, tergantung pada siklus bulu mata alami dan perawatan harian Anda. Kami menyarankan untuk melakukan refill setiap 2–3 minggu agar tampilan tetap lebat dan rapi."
-  },
-  {
-    q: "Apa perbedaan Korean Lashlift & Tint dengan Eyelash Extension?",
-    a: "Korean Lashlift melentikkan dan memberi warna hitam pekat pada bulu mata asli Anda tanpa menambahkan bulu mata sintetis. Sedangkan Eyelash Extension menambahkan helaian bulu mata sintetis untuk efek yang lebih panjang dan tebal."
-  },
-  {
-    q: "Apakah saya harus melakukan booking/reservasi terlebih dahulu?",
-    a: "Sangat disarankan! Untuk memastikan ketersediaan jadwal slot terapis dan kenyamanan Anda, harap melakukan reservasi via WhatsApp sebelum datang ke studio kami di Kuta Lombok."
-  },
-  {
-    q: "Berapa lama pengerjaan Gel Manicure atau Nail Art?",
-    a: "Pengerjaan Gel Manicure standar memakan waktu sekitar 45–60 menit. Jika menambah desain Nail Art atau perawatan Callus Care, waktu pengerjaan berkisar antara 75–120 menit."
-  },
-  {
-    q: "Di mana lokasi OVI Eyelash & Nail Studio?",
-    a: "Studio kami berlokasi strategis di area Kuta, Pujut, Lombok Tengah (dekat dengan kawasan wisata Kuta Mandalika). Anda dapat menghubungi kami via WhatsApp untuk petunjuk rute presisi."
-  }
-];
-
-function FAQSection() {
+function FAQSection({ t }) {
   const [openIndex, setOpenIndex] = useState(null);
+
+  // Mengambil daftar FAQ dari objek translasi t
+  const faqData = t.faq_list || [];
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  // Structured Data Schema untuk Google Rich Snippets
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqData.map(item => ({
+      "@type": "Question",
+      "name": item.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.a
+      }
+    }))
+  };
+
   return (
     <section className="py-5 bg-white">
+      {/* Inject FAQ Schema untuk Google */}
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+      </Helmet>
+
       <div className="container py-4">
         <div className="text-center mb-5" data-aos="fade-up">
           <span className="text-uppercase small tracking-widest text-muted" style={{ letterSpacing: '2px' }}>
-            Frequently Asked Questions
+            {t.faq_sub || "Frequently Asked Questions"}
           </span>
-          <h2 className="display-5 font-serif mt-1">Pertanyaan Umum (FAQ)</h2>
+          <h2 className="display-5 font-serif mt-1">{t.faq_title || "Frequently Asked Questions"}</h2>
           <div style={{ width: '60px', height: '2px', backgroundColor: 'var(--accent-color)', margin: '15px auto 0' }}></div>
         </div>
 
