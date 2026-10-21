@@ -143,7 +143,7 @@ function Home({ t }) {
         </div>
       </section>
 
-      <FAQSection />
+      <FAQSection t={t} />
 
       {/* CONTACT SECTION */}
       <section id="contact" className="py-5" style={{ backgroundColor: 'var(--bg-secondary)' }}>
