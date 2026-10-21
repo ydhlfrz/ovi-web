@@ -24,11 +24,20 @@ function ScrollToTop() {
 
 function App() {
   const [lang, setLang] = useState('en');
+  const [isNavOpen, setIsNavOpen] = useState(false);
   const t = translations[lang];
 
   useEffect(() => {
     AOS.init({ duration: 800, once: true, easing: 'ease-out-cubic' });
   }, []);
+
+  const toggleNav = () => {
+    setIsNavOpen(!isNavOpen);
+  };
+
+  const closeNav = () => {
+    setIsNavOpen(false);
+  };
 
   return (
     <Router>
@@ -37,7 +46,7 @@ function App() {
         {/* NAVBAR GLASSMORPHISM */}
         <nav className="navbar navbar-expand-lg py-2 sticky-top navbar-glassmorphism">
           <div className="container">
-            <Link className="navbar-brand text-center py-0" to="/">
+            <Link className="navbar-brand text-center py-0" to="/" onClick={closeNav}>
               <img src="/images/logo.png" onError={(e) => e.target.src="https://via.placeholder.com/150x60?text=OVI+LOGO"} alt="OVI Logo" style={{ height: '90px', objectFit: 'contain' }} />
             </Link>
 
@@ -52,15 +61,28 @@ function App() {
               </a>
             </div>
 
-            <button className="navbar-toggler border-0 p-2 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            {/* TOMBOL BURGER DENGAN REACT STATE */}
+            <button 
+              className="navbar-toggler border-0 p-2 shadow-none" 
+              type="button" 
+              onClick={toggleNav}
+              aria-label="Toggle navigation"
+            >
               <span className="navbar-toggler-icon"></span>
             </button>
 
-            <div className="collapse navbar-collapse justify-content-center text-center mt-3 mt-lg-0" id="navbarNav">
+            {/* COLLAPSE CONTAINER DENGAN KELAS DYNAMIS SHOW */}
+            <div className={`collapse navbar-collapse justify-content-center text-center mt-3 mt-lg-0 ${isNavOpen ? 'show' : ''}`} id="navbarNav">
               <ul className="navbar-nav py-2 py-lg-0">
-                <li className="nav-item"><Link className="nav-link py-2" to="/">{t.nav_home}</Link></li>
-                <li className="nav-item"><Link className="nav-link py-2" to="/services">{t.nav_services}</Link></li>
-                <li className="nav-item"><Link className="nav-link py-2" to="/gallery">{t.nav_gallery}</Link></li>
+                <li className="nav-item">
+                  <Link className="nav-link py-2" to="/" onClick={closeNav}>{t.nav_home}</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link py-2" to="/services" onClick={closeNav}>{t.nav_services}</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link py-2" to="/gallery" onClick={closeNav}>{t.nav_gallery}</Link>
+                </li>
               </ul>
             </div>
           </div>
