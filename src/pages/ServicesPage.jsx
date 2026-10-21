@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, ArrowLeft, Clock } from 'lucide-react';
 import { servicesData } from '../data/content';
@@ -18,6 +19,14 @@ function ServicesPage({ t }) {
 
   return (
     <div className="py-5" style={{ minHeight: '80vh', backgroundColor: 'var(--bg-primary)' }}>
+      
+      {/* Dynamic SEO Metadata */}
+      <Helmet>
+        <title>Services & Price List | OVI Eyelash & Nail Studio Kuta Lombok</title>
+        <meta name="description" content="Explore our complete menu & price list for Eyelash Extensions, Korean Lashlift, Manicure, Pedicure, Callus Care, and Brow Lamination in Kuta Lombok." />
+        <link rel="canonical" href="https://ovieyelash.com/services" />
+      </Helmet>
+
       <div className="container py-4">
         
         {/* HEADER SECTION */}
@@ -300,6 +309,7 @@ function ServicesPage({ t }) {
                       </ul>
                     </div>
                   )}
+
                   {/* LASH ADD ONS & REMOVALS */}
                   {selectedService.addOns && (
                     <div className="p-3 p-md-4 bg-light shadow-sm rounded-3 mt-4">
