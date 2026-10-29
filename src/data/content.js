@@ -113,7 +113,19 @@ export const galleryImages = [
   { id: 7, src: "/images/gallery-7.png", title: "" },
   { id: 8, src: "/images/gallery-8.png", title: "" },
   { id: 9, src: "/images/gallery-9.png", title: "" },
-  { id: 10, src: "/images/gallery-10.jpeg", title: "" }
+  { id: 10, src: "/images/gallery-10.jpeg", title: "" },
+  { id: 11, src: "/images/gallery-11.jpeg", title: "" },
+  { id: 12, src: "/images/gallery-12.jpeg", title: "" },
+  { id: 13, src: "/images/gallery-13.jpeg", title: "" },
+  { id: 14, src: "/images/gallery-14.jpeg", title: "" },
+  { id: 15, src: "/images/gallery-15.jpeg", title: "" },
+  { id: 16, src: "/images/gallery-16.jpeg", title: "" },
+  { id: 17, src: "/images/gallery-17.jpeg", title: "" },
+  { id: 18, src: "/images/gallery-18.jpeg", title: "" },
+  { id: 19, src: "/images/gallery-19.jpeg", title: "" },
+  { id: 20, src: "/images/gallery-20.jpeg", title: "" },
+  { id: 21, src: "/images/gallery-21.jpeg", title: "" },
+  { id: 22, src: "/images/gallery-22.jpeg", title: "" }
 ];
 
 export const translations = {
