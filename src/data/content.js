@@ -74,8 +74,8 @@ export const servicesData = [
       { name: "Whispy Style", price: "50K" },
       { name: "Anime Lash Style", price: "75K" },
       { name: "Cat Eye", price: "50K" },
-      { name: "Remove Extensions from Ovi", price: "50K" },
-      { name: "Remove Extensions from Other Salon", price: "100K" }
+      { name: "Remove Extensions from Ovi", price: "75K" },
+      { name: "Remove Extensions from Other Salon", price: "150K" }
     ]
   },
   {
