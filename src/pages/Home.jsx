@@ -181,10 +181,10 @@ function Home({ t }) {
                     <a href="https://instagram.com/ovi.eyelash" target="_blank" rel="noreferrer" className="social-link" title="Instagram @ovi.eyelash">
                       <i className="bi bi-instagram" style={{ color: '#E1306C' }}></i>
                     </a>
-                    <a href="https://tiktok.com/@ovi.eyelash" target="_blank" rel="noreferrer" className="social-link" title="TikTok @ovi.eyelash">
+                    <a href="https://www.tiktok.com/@novita.ov" target="_blank" rel="noreferrer" className="social-link" title="TikTok @ovi.eyelash">
                       <i className="bi bi-tiktok" style={{ color: '#000000' }}></i>
                     </a>
-                    <a href="https://facebook.com/ovi.eyelash" target="_blank" rel="noreferrer" className="social-link" title="Facebook @ovi.eyelash">
+                    <a href="https://web.facebook.com/novytasamantha" target="_blank" rel="noreferrer" className="social-link" title="Facebook @ovi.eyelash">
                       <i className="bi bi-facebook" style={{ color: '#1877F2' }}></i>
                     </a>
                     <a href="https://wa.me/6285238652587" target="_blank" rel="noreferrer" className="social-link" title="WhatsApp Admin">
